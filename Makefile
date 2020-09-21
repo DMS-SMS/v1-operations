@@ -6,3 +6,7 @@ jaeger-dev:
 .PHONY: consul-dev
 consul-dev:
 	docker-compose -f registry/consul_dev_docker_compose.yml up -d
+
+.PHONY: mysql-dev
+mysql-dev:
+	docker-compose -f db/mysql_dev_docker_compose.yml up -d

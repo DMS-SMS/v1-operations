@@ -8,7 +8,7 @@ $ gh repo clone DMS-SMS/v1-operations
 ```
 2. Enter your SQL configuration in environment
 ```bash
-$ export MYSQL_PASSWORD={SQL-PASSWORD}
+$ export MYSQL_ROOT_PASSWORD={SQL-PASSWORD}
 ```
 3. run
 ```bash

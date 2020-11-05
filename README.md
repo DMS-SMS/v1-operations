@@ -12,5 +12,5 @@ $ export MYSQL_ROOT_PASSWORD={SQL-PASSWORD}
 ```
 3. run
 ```bash
-$ make jaeger-dev consul-dev mysql-dev
+$ make jaeger_server consul_server mysql_server
 ```

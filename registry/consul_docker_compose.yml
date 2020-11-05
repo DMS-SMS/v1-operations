@@ -2,9 +2,9 @@ version: '3.5'
 services:
   consul:
     image: consul:latest
-    container_name: consul_dev_server
+    container_name: consul_server
     volumes:
-      - consul-data:/consul/data
+      - consul_data:/consul/data
     ports:
       - 8300:8300
       - 8301:8301
@@ -16,7 +16,7 @@ services:
 
 volumes:
   consul-data:
-    name: consul-data
+    name: consul_data
     driver: local
 
 networks:

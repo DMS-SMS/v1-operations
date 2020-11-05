@@ -15,7 +15,7 @@ services:
       - dms_sms_local
 
 volumes:
-  consul-data:
+  consul_data:
     name: consul_data
     driver: local
 

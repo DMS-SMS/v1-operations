@@ -9,9 +9,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     networks:
-      - dms_sms_local
-    ports:
-      - 3306:3306
+      - dms-sms-local
 
 volumes:
   db_data:
@@ -19,6 +17,6 @@ volumes:
     driver: local
 
 networks:
-  dms_sms_local:
-    name: dms_sms_local
+  dms-sms-local:
+    name: dms-sms-local
     driver: bridge

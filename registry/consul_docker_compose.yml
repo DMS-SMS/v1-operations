@@ -12,7 +12,7 @@ services:
       - 8600:8600
     command: "consul agent -server -bootstrap -ui -client=0.0.0.0 -data-dir=/consul/data"
     networks:
-      - dms_sms_local
+      - dms-sms-local
 
 volumes:
   consul_data:
@@ -20,6 +20,6 @@ volumes:
     driver: local
 
 networks:
-  dms_sms_local:
-    name: dms_sms_local
+  dms-sms-local:
+    name: dms-sms-local
     driver: bridge

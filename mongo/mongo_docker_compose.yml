@@ -3,11 +3,11 @@ version: '3.5'
 services:
   mongo:
     image: mongo:3.6.21
-    container_name: mongo_dev_server
+    container_name: mongo_server
     volumes:
       - mongo_db_data:/data/db
     networks:
-      - dms_sms_local
+      - dms-sms-local
     ports:
       - 27017:27017
 
@@ -17,6 +17,6 @@ volumes:
     driver: local
 
 networks:
-  dms_sms_local:
-    name: dms_sms_local
+  dms-sms-local:
+    name: dms-sms-local
     driver: bridge

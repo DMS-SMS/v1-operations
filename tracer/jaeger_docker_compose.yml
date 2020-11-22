@@ -7,9 +7,9 @@ services:
       - "6831:6831/udp"
       - "16686:16686"
     networks:
-      - dms_sms_local
+      - dms-sms-local
 
 networks:
-  dms_sms_local:
-    name: dms_sms_local
+  dms-sms-local:
+    name: dms-sms-local
     driver: bridge

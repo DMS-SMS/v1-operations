@@ -1,0 +1,17 @@
+# please access this Makefile in .. directory
+
+.PHONY: consul_docker
+consul_docker:
+	docker-compose -f registry/consul_docker_compose.yml up -d
+
+.PHONY: consul_service
+consul_service:
+	kubectl apply -f registry/consul-service.yaml
+
+.PHONY: consul_deploy
+consul_deploy:
+	envsubst < registry/consul-deployment.yaml | kubectl apply -f -
+
+.PHONY: consul_volume
+consul_volume:
+	envsubst < registry/consul-data-persistentvolumeclaim.yaml | kubectl apply -f -

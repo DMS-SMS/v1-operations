@@ -14,4 +14,4 @@ mongo_deploy:
 
 .PHONY: mongo_volume
 mongo_volume:
-	envsubst < mongo/mongo-db-data-persistentvolumeclaim.yaml | kubectl apply -f -
+	kubectl apply -f mongo/mongo-db-data-persistentvolumeclaim.yaml

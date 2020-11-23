@@ -6,9 +6,10 @@ metadata:
     io.kompose.service: consul-data
   name: consul-data
 spec:
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 100Mi
+      storage: 1Gi
 status: {}

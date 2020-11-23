@@ -14,4 +14,5 @@ mysql_deploy:
 
 .PHONY: mysql_volume
 mysql_volume:
+	kubectl apply -f db/db-data-persistentvolume.yaml
 	kubectl apply -f db/db-data-persistentvolumeclaim.yaml

@@ -14,4 +14,5 @@ consul_deploy:
 
 .PHONY: consul_volume
 consul_volume:
+	kubectl apply -f registry/consul-data-persistentvolume.yaml
 	kubectl apply -f registry/consul-data-persistentvolumeclaim.yaml

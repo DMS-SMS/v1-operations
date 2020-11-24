@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f elk_docker_compose.yml convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: elasticsearch
+  name: elasticsearch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: elasticsearch
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f elk_docker_compose.yml convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/dms-sms-local: "true"
+        io.kompose.service: elasticsearch
+    spec:
+      initContainers:
+        - name: initcontainer
+          image: alpine:latest
+          command: ["/bin/sh", "-c"]
+          args:
+            - chown 1000:1000 /usr/share/elasticsearch/data; # Replace UID and GID with values from the Dockerfile
+          volumeMounts:
+            - mountPath: /usr/share/elasticsearch/data
+              name: elasticsearch
+      containers:
+        - env:
+            - name: discovery.type
+              value: single-node
+          image: elasticsearch:7.9.3
+          name: elasticsearch
+          ports:
+            - containerPort: 9200
+            - containerPort: 9300
+          resources: {}
+          volumeMounts:
+            - mountPath: /usr/share/elasticsearch/data
+              name: elasticsearch
+      restartPolicy: Always
+      volumes:
+        - name: elasticsearch
+          persistentVolumeClaim:
+            claimName: elasticsearch
+status: {}

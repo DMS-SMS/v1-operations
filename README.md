@@ -18,6 +18,7 @@ __Development setup__
     $ make -f tracer/Makefile jaeger_docker # run jaeger
     $ make -f mongo/Makefile mongo_docker # run mongo
     $ make -f redis/Makefile redis_docker # run redis
+    $ make -f elk/Makefile elk_dokcer # run elk
     ```
     3-2. on kubernetes
     ```bash
@@ -43,5 +44,10 @@ __Development setup__
     # run redis
     $ make -f redis/Makefile redis_service
     $ make -f redis/Makefile redis_deploy
+   
+    # run elk
+    $ make -f elk/Makefile elk_service
+    $ make -f elk/Makefile elk_volume
+    $ make -f elk/Makefile elk_deploy
     ```
  

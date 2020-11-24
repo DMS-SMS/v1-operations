@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose -f elk_docker_compose.yml convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: logstash
+  name: logstash
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: logstash
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose -f elk_docker_compose.yml convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/dms-sms-local: "true"
+        io.kompose.service: logstash
+    spec:
+      containers:
+        - args:
+            - logstash
+            - -f
+            - /conf-dir/logstash.conf
+          image: logstash:7.9.3
+          name: logstash
+          ports:
+            - containerPort: 5044
+          resources: {}
+          volumeMounts:
+            - name: logstash
+              mountPath: /conf-dir/logstash.conf
+              readOnly: true
+      restartPolicy: Always
+      volumes:
+        - name: logstash
+          hostPath:
+            path: /logstash.conf
+            type: FileOrCreate
+status: {}

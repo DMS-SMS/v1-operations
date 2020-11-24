@@ -43,6 +43,6 @@ spec:
       volumes:
         - name: logstash
           hostPath:
-            path: /logstash.conf
+            path: $LOGSTASH_DIRECTORY/logstash.conf
             type: FileOrCreate
 status: {}

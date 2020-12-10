@@ -20,3 +20,7 @@ elk_deploy:
 	envsubst < elk/elasticsearch-deployment.yaml | kubectl apply -f -
 	envsubst < elk/kibana-deployment.yaml | kubectl apply -f -
 	envsubst < elk/logstash-deployment.yaml | kubectl apply -f -
+
+.PHONY: elk_stack
+elk_stack:
+	docker stack deploy -c elk/elk_docker_compose.yml DSM_SMS

@@ -16,3 +16,7 @@ consul_deploy:
 consul_volume:
 	kubectl apply -f registry/consul-data-persistentvolume.yaml
 	kubectl apply -f registry/consul-data-persistentvolumeclaim.yaml
+
+.PHONY: consul_stack
+consul_stack:
+	docker stack deploy -c registry/consul_docker_compose.yml DSM_SMS

@@ -11,3 +11,7 @@ redis_service:
 .PHONY: redis_deploy
 redis_deploy:
 	envsubst < redis/redis-deployment.yaml | kubectl apply -f -
+
+.PHONY: redis_stack
+redis_stack:
+	docker stack deploy -c redis/redis_docker_compose.yml DSM_SMS

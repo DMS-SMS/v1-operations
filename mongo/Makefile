@@ -16,3 +16,7 @@ mongo_deploy:
 mongo_volume:
 	kubectl apply -f mongo/mongo-db-data-persistentvolume.yaml
 	kubectl apply -f mongo/mongo-db-data-persistentvolumeclaim.yaml
+
+.PHONY: mongo_stack
+mongo_stack:
+	docker stack deploy -c mongo/mongo_docker_compose.yml DSM_SMS

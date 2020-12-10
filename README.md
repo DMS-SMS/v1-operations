@@ -28,13 +28,13 @@ __Development setup__
     $ make -f db/Makefile mysql_deploy
 
     # run consul
-    $ make -f consul/Makefile consul_service
-    $ make -f consul/Makefile consul_volume
-    $ make -f consul/Makefile consul_deploy
+    $ make -f registry/Makefile consul_service
+    $ make -f registry/Makefile consul_volume
+    $ make -f registry/Makefile consul_deploy
 
     # run jaeger
-    $ make -f jaeger/Makefile jaeger_service
-    $ make -f jaeger/Makefile jaeger_deploy
+    $ make -f tracer/Makefile jaeger_service
+    $ make -f tracer/Makefile jaeger_deploy
 
     # run mongo
     $ make -f mongo/Makefile mongo_service
@@ -48,6 +48,15 @@ __Development setup__
     # run elk
     $ make -f elk/Makefile elk_service
     $ make -f elk/Makefile elk_volume
-    $ make -f elk/Makefile elk_deploy
+    $ make -f elk/Makefile elk_deploy 
+    ```
+    3-3. on docker swarm
+    ``` bash
+    $ make -f db/Makefile mysql_stack # run mysql
+    $ make -f registry/Makefile consul_stack # run consul
+    $ make -f tracer/Makefile jaeger_stack # run jaeger
+    $ make -f mongo/Makefile mongo_stack # run mongo
+    $ make -f redis/Makefile redis_stack # run redis
+    $ make -f elk/Makefile elk_stack # run elk
     ```
  

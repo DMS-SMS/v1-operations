@@ -16,3 +16,7 @@ mysql_deploy:
 mysql_volume:
 	kubectl apply -f db/db-data-persistentvolume.yaml
 	kubectl apply -f db/db-data-persistentvolumeclaim.yaml
+
+.PHONY: mysql_stack
+mysql_stack:
+	docker stack deploy -c db/mysql_docker_compose.yml DSM_SMS

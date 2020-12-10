@@ -8,8 +8,12 @@ services:
       - "16686:16686"
     networks:
       - dms-sms-local
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels: [APP=jaeger]
 
 networks:
   dms-sms-local:
     name: dms-sms-local
-    driver: bridge
+    driver: overlay

@@ -13,6 +13,11 @@ services:
       - elasticsearch:/usr/share/elasticsearch/data
     networks:
       - dms-sms-local
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels: [APP=elasticsearch]
+
   logstash:
     container_name: logstash
     image: logstash:7.9.3
@@ -25,6 +30,11 @@ services:
       - elasticsearch
     networks:
       - dms-sms-local
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels: [APP=logstash]
+
   kibana:
     container_name: kibana
     image: kibana:7.9.3
@@ -36,6 +46,11 @@ services:
       - dms-sms-local
     networks:
       - dms-sms-local
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels: [APP=kibana]
+
 
 volumes:
   elasticsearch:
@@ -45,4 +60,4 @@ volumes:
 networks:
   dms-sms-local:
     name: dms-sms-local
-    driver: bridge
+    driver: overlay

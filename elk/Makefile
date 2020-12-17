@@ -25,6 +25,10 @@ elk_deploy:
 elasticsearch_stack:
 	docker stack deploy -c elk/elasticsearch_docker_compose.yml DSM_SMS
 
-.PHONY: elk_stack
-elk_stack:
+.PHONY: logstash_kibana_stack
+logstash_kibana_stack:
 	docker stack deploy -c elk/elk_docker_compose.yml DSM_SMS
+
+.PHONY: remove_logstash_kibana_stack
+remove_logstash_kibana_stack:
+	docker rm DSM_SMS_logstash DSM_SMS_kibana

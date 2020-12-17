@@ -57,6 +57,7 @@ __Development setup__
     $ make -f tracer/Makefile jaeger_stack # run jaeger
     $ make -f mongo/Makefile mongo_stack # run mongo
     $ make -f redis/Makefile redis_stack # run redis
+    $ make -f elk/Makefile elasticsearch_stack
     $ make -f elk/Makefile elk_stack # run elk
     ```
  

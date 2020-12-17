@@ -31,4 +31,4 @@ logstash_kibana_stack:
 
 .PHONY: remove_logstash_kibana_stack
 remove_logstash_kibana_stack:
-	docker rm DSM_SMS_logstash DSM_SMS_kibana
+	docker service rm DSM_SMS_logstash DSM_SMS_kibana

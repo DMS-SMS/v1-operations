@@ -24,3 +24,4 @@ elk_deploy:
 .PHONY: elk_stack
 elk_stack:
 	docker stack deploy -c elk/elk_docker_compose.yml DSM_SMS
+	docker stack deploy -c elk/elasticsearch_docker_compose.yml

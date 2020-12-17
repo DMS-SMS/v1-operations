@@ -6,8 +6,13 @@ services:
     ports:
       - "6831:6831/udp"
       - "16686:16686"
+      - "14268:14268"
     networks:
       - dms-sms-local
+    environment:
+      - SPAN_STORAGE_TYPE=elasticsearch
+      - ES_SERVER_URLS=elasticsearch:9200
+      - ES_TAGS_AS_FIELDS_ALL=true
     deploy:
       mode: replicated
       replicas: 1

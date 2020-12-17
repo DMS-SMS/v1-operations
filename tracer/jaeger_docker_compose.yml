@@ -11,7 +11,7 @@ services:
       - dms-sms-local
     environment:
       - SPAN_STORAGE_TYPE=elasticsearch
-      - ES_SERVER_URLS=elasticsearch:9200
+      - ES_SERVER_URLS=https://elasticsearch:9200
       - ES_TAGS_AS_FIELDS_ALL=true
     deploy:
       mode: replicated

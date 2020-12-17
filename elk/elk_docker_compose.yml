@@ -1,25 +1,6 @@
 version: '3.5'
 
 services:
-  elasticsearch:
-    container_name: elasticsearch
-    name: DSM-SMS-elasticsearch
-    hostname: DSM-SMS-elasticsearch
-    image: elasticsearch:7.9.3
-    ports:
-      - 9200:9200
-      - 9300:9300
-    environment:
-      - discovery.type=single-node
-    volumes:
-      - elasticsearch:/usr/share/elasticsearch/data
-    networks:
-      - dms-sms-local
-    deploy:
-      mode: replicated
-      replicas: 1
-      labels: [APP=elasticsearch]
-
   logstash:
     container_name: logstash
     image: logstash:7.9.3

@@ -13,8 +13,6 @@ services:
       - elasticsearch
     networks:
       - dms-sms-local
-    environment:
-      - ELASTICSEARCH_ADDRESS=${ELASTICSEARCH_ADDRESS}
     deploy:
       mode: replicated
       replicas: 1
@@ -26,7 +24,7 @@ services:
     ports:
       - 5601:5601
     environment:
-      - ELASTICSEARCH_URL=${ELASTICSEARCH_ADDRESS}
+      - ELASTICSEARCH_URL=elasticsearch:9200
     depends_on:
       - dms-sms-local
     networks:

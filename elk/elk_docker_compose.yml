@@ -13,6 +13,8 @@ services:
       - elasticsearch
     networks:
       - dms-sms-local
+    environment:
+      - ELASTICSEARCH_ADDRESS=${ELASTICSEARCH_ADDRESS}
     deploy:
       mode: replicated
       replicas: 1

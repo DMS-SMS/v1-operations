@@ -3,7 +3,7 @@ version: '3.5'
 services:
   elasticsearch:
     container_name: elasticsearch
-    hostname: 'DSM-SMS-elasticsearch:9200'
+    hostname: DSM-SMS-elasticsearch
     image: elasticsearch:7.9.3
     ports:
       - 9200:9200

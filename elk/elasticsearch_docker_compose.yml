@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+  elasticsearch:
+    container_name: elasticsearch
+    image: elasticsearch:7.9.3
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - elasticsearch:/usr/share/elasticsearch/data
+    networks:
+      - dms-sms-local
+    deploy:
+      mode: replicated
+      replicas: 1
+      labels: [APP=elasticsearch]
+
+volumes:
+  elasticsearch:
+    name: elaticsearch
+    driver: local
+
+networks:
+  dms-sms-local:
+    name: dms-sms-local
+    driver: overlay

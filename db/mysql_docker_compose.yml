@@ -6,6 +6,8 @@ services:
     container_name: mysql_server
     volumes:
       - db_data:/var/lib/mysql
+      - mysql-log:/var/log/mysql
+      - mysql-conf:/etc/mysql/conf.d
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
@@ -20,6 +22,12 @@ services:
 volumes:
   db_data:
     name: db_data
+    driver: local
+  mysql-log:
+    name: mysql-log
+    driver: local
+  mysql-conf:
+    name: mysql-conf
     driver: local
 
 networks:

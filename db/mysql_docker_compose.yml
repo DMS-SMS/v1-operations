@@ -7,7 +7,7 @@ services:
     volumes:
       - db_data:/var/lib/mysql
       - mysql-log:/var/log/mysql
-      - mysql-conf:/etc/mysql/conf.d
+      - mysql-conf:/etc/mysql/my.cnf
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:

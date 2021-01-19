@@ -1,3 +1,14 @@
 {
-  "data_dir": "/consul/data"
+  "data_dir": "/consul/data",
+  "watches": [
+    {
+      "type": "service",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://54.180.165.105/consul/watch/service",
+        "method": "GET",
+        "timeout": "10s"
+      }
+    }
+  ]
 }

@@ -6,8 +6,8 @@
       "service": "DMS.SMS.v1.service.auth",
       "handler_type": "http",
       "http_handler_config": {
-        "path": "http://54.180.165.105/consul/watch/service",
-        "method": "GET",
+        "path": "DSM_SMS_api-gateway:80/events/types/consul-change",
+        "method": "POST",
         "timeout": "10s"
       }
     }

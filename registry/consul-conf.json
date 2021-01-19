@@ -8,6 +8,7 @@
       "http_handler_config": {
         "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
         "method": "POST",
+        "header": { "type": "service" },
         "timeout": "10s"
       }
     }, {
@@ -17,6 +18,7 @@
       "http_handler_config": {
         "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
         "method": "POST",
+        "header": { "type": "checks" },
         "timeout": "10s"
       }
     }

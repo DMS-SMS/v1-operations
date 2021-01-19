@@ -1,15 +1,3 @@
 {
-  "data_dir": "/consul/data",
-  "watches": [
-    {
-      "type": "service",
-      "service": "DMS.SMS.v1.service.auth",
-      "handler_type": "http",
-      "http_handler_config": {
-        "path": "http://54.180.165.105/consul/watch/service",
-        "method": "GET",
-        "timeout": "10s"
-      }
-    }
-  ]
+  "data_dir": "/consul/data"
 }

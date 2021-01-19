@@ -4,7 +4,7 @@ services:
     image: consul:latest
     container_name: consul_server
     volumes:
-      - consul_data:/consul/data
+      - consul_data_1:/consul/data
       - ./consul-conf.json:/consul/conf/consul-conf.json
     ports:
       - 8300:8300
@@ -20,8 +20,8 @@ services:
       labels: [APP=consul]
 
 volumes:
-  consul_data:
-    name: consul_data
+  consul_data_1:
+    name: consul_data_1
     driver: local
 
 networks:

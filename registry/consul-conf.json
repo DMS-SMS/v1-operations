@@ -6,7 +6,7 @@
       "service": "DMS.SMS.v1.service.auth",
       "handler_type": "http",
       "http_handler_config": {
-        "path": "DSM_SMS_api-gateway:80/events/types/consul-change",
+        "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
         "method": "POST",
         "timeout": "10s"
       }

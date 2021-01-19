@@ -1,3 +1,6 @@
 {
-  "data_dir": "/consul/data"
+  "data_dir": "/consul/data",
+  "bootstrap": true,
+  "ui": true,
+  "server": true
 }

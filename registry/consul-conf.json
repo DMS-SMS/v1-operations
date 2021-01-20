@@ -27,6 +27,114 @@
         },
         "timeout": "10s"
       }
+    },
+    {
+      "type": "service",
+      "service": "DMS.SMS.v1.service.club",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
+        "method": "POST",
+        "header": {
+          "type": ["service"],
+          "service": ["DMS.SMS.v1.service.club"]
+        },
+        "timeout": "10s"
+      }
+    }, {
+      "type": "checks",
+      "service": "DMS.SMS.v1.service.club",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
+        "method": "POST",
+        "header": {
+          "type": ["checks"],
+          "service": ["DMS.SMS.v1.service.club"]
+        },
+        "timeout": "10s"
+      }
+    },
+    {
+      "type": "service",
+      "service": "DMS.SMS.v1.service.outing",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
+        "method": "POST",
+        "header": {
+          "type": ["service"],
+          "service": ["DMS.SMS.v1.service.outing"]
+        },
+        "timeout": "10s"
+      }
+    }, {
+      "type": "checks",
+      "service": "DMS.SMS.v1.service.outing",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
+        "method": "POST",
+        "header": {
+          "type": ["checks"],
+          "service": ["DMS.SMS.v1.service.outing"]
+        },
+        "timeout": "10s"
+      }
+    },
+    {
+      "type": "service",
+      "service": "DMS.SMS.v1.service.schedule",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
+        "method": "POST",
+        "header": {
+          "type": ["service"],
+          "service": ["DMS.SMS.v1.service.schedule"]
+        },
+        "timeout": "10s"
+      }
+    }, {
+      "type": "checks",
+      "service": "DMS.SMS.v1.service.schedule",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
+        "method": "POST",
+        "header": {
+          "type": ["checks"],
+          "service": ["DMS.SMS.v1.service.schedule"]
+        },
+        "timeout": "10s"
+      }
+    },
+    {
+      "type": "service",
+      "service": "DMS.SMS.v1.service.announcement",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
+        "method": "POST",
+        "header": {
+          "type": ["service"],
+          "service": ["DMS.SMS.v1.service.announcement"]
+        },
+        "timeout": "10s"
+      }
+    }, {
+      "type": "checks",
+      "service": "DMS.SMS.v1.service.announcement",
+      "handler_type": "http",
+      "http_handler_config": {
+        "path": "http://DSM_SMS_api-gateway:80/events/types/consul-change",
+        "method": "POST",
+        "header": {
+          "type": ["checks"],
+          "service": ["DMS.SMS.v1.service.announcement"]
+        },
+        "timeout": "10s"
+      }
     }
   ]
 }

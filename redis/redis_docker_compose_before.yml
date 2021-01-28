@@ -6,9 +6,6 @@ services:
     container_name: redis_server
     networks:
       - dms-sms-local
-    volumes:
-      - ./redis.conf:/usr/local/etc/redis/redis.conf
-    command: redis-server /usr/local/etc/redis/redis.conf
     ports:
       - 6379:6379
     deploy:

@@ -13,6 +13,8 @@ services:
       - SPAN_STORAGE_TYPE=elasticsearch
       - ES_SERVER_URLS=http://elasticsearch:9200
       - ES_TAGS_AS_FIELDS_ALL=true
+      - ES_NUM_SHARDS=1
+      - ES_NUM_REPLICAS=1
     deploy:
       mode: replicated
       replicas: 1
